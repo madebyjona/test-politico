@@ -216,7 +216,7 @@ quests.forEach((quest) => {
     <li>
       <div><h3>${quest.title}</h3></div>
       <div>
-        <div class="quest-image"><img src="../src/images/${quest.image}.jpg" /></div>
+        <div class="quest-image"><img src="src/images/${quest.image}.jpg" /></div>
         <div class="quest-text">
           <label class="quest-intro" for="${quest.id}">${quest.label}</label>
           <div class="quest-option"><input name="${quest.id}" id="${quest.id}a" type="radio" value="a"><label class="text-option" for="${quest.id}a">${quest.o1}</label></input></div>
