@@ -238,7 +238,7 @@ function verResultado() {
   partidos.forEach((partido) => {
     politics.innerHTML += `
     <div>
-      <img src="../src/images/${partido.imagen}.png">
+      <img src="src/images/${partido.imagen}.png">
       <p> ${partido.nombre} (a ${partido.dif}%).</p>
     </div>
   `;
