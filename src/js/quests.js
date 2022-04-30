@@ -197,20 +197,6 @@ const quests = [
 
 const questions = document.querySelector("#questions");
 
-questions.innerHTML += `
-  <li>
-    <div><h3>Comienzo</h3></div>
-    <div>
-      <p>Por favor, responda a las 20 preguntas.</p>
-      <ul>
-        <li>Las 10 primeras preguntas le posicionarán en cuestiones sociales.</li>
-        <li>Las últimas 10 preguntas le posicionarán en cuestiones económicas.</li>
-      </ul>
-      <button id="start-button" type="button">Comenzar</button>
-    </div>
-  </li>
-`;
-
 quests.forEach((quest) => {
   questions.innerHTML += `
     <li>
@@ -219,9 +205,9 @@ quests.forEach((quest) => {
         <div class="quest-image"><img src="src/images/${quest.image}.jpg" /></div>
         <div class="quest-text">
           <label class="quest-intro" for="${quest.id}">${quest.label}</label>
-          <div class="quest-option"><input name="${quest.id}" id="${quest.id}a" type="radio" value="a"><label class="text-option" for="${quest.id}a">${quest.o1}</label></input></div>
-          <div class="quest-option"><input name="${quest.id}" id="${quest.id}b" type="radio" value="b"><label class="text-option" for="${quest.id}b">${quest.o2}</label></input></div>
-          <div class="quest-option"><input name="${quest.id}" id="${quest.id}c" type="radio" value="c"><label class="text-option" for="${quest.id}c">${quest.o3}</label></input></div>
+          <div class="quest-option"><input class="quest-input" name="${quest.id}" id="${quest.id}a" type="radio" value="a"><label class="text-option" for="${quest.id}a">${quest.o1}</label></input></div>
+          <div class="quest-option"><input class="quest-input" name="${quest.id}" id="${quest.id}b" type="radio" value="b"><label class="text-option" for="${quest.id}b">${quest.o2}</label></input></div>
+          <div class="quest-option"><input class="quest-input" name="${quest.id}" id="${quest.id}c" type="radio" value="c"><label class="text-option" for="${quest.id}c">${quest.o3}</label></input></div>
         </div>
       </div>
     </li>
@@ -238,3 +224,4 @@ questions.innerHTML += `
     </div>
   </li>
 `;
+

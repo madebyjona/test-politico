@@ -61,7 +61,21 @@
       </div>
       <div>
         <form>
-          <ul id="questions" class="accordionjs"></ul>
+          <ul id="questions" class="accordionjs">
+            <li>
+              <div><h3>Comienzo</h3></div>
+              <div>
+                <p>Por favor, responda a las 20 preguntas.</p>
+                <ul>
+                  <li>Las 10 primeras preguntas le posicionarán en cuestiones sociales.</li>
+                  <li>Las últimas 10 preguntas le posicionarán en cuestiones económicas.</li>
+                </ul>
+                <label class="quest-intro" for="country">Selecciona tu país para compararte con los partidos políticos</label>
+                <input class="country-option" name="country" value="" id="argentina" type="radio"><label class="country-label" for="argentina">Argentina</label></input>
+                <input class="country-option" name="country" value="" id="uruguay" type="radio" checked="checked" ><label class="country-label" for="uruguay">Uruguay</label></input>
+              </div>
+            </li>
+          </ul>
         </form>
       </div>
     </div>
@@ -105,17 +119,12 @@
           <h3 class="text-center">Diagrama de Nolan</h3>
           <img id="rombo" src="src/images/rombo.png" />
           <div id="diagrama">
-            <div id="politics-flags">
-              <img id="pn" src="src/images/pn.png" />
-              <img id="fa" src="src/images/fa.png" />
-              <img id="pc" src="src/images/pc.png" />
-              <img id="ca" src="src/images/ca.png" />
-              <img id="pi" src="src/images/pi.png" />
-            </div>
-              <img id="target" src="src/images/target.png" /> 
-              <img class="arrow" id="arrow-top" src="src/images/flecha-der.png" />
-              <img class="arrow" id="arrow-left" src="src/images/flecha-der.png" />
+            <div id="politics-flags"></div>
+            <img id="target" src="src/images/target.png" /> 
+            <img class="arrow" id="arrow-top" src="src/images/flecha-der.png" />
+            <img class="arrow" id="arrow-left" src="src/images/flecha-der.png" />
           </div>
+          <div id="target-indication"><img src="src/images/target.png" /><p>= Su posición en el diagrama de Nolan.</p></div>
         </div>
         <div class="block">
           <b>Sus respuestas fueron:</b>
@@ -135,7 +144,6 @@
   });
 </script>
   <script src="src/js/accordion.js"></script>
-  
   <script src="src/js/quests.js"></script>
   
 </body>

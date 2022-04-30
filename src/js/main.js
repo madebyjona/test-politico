@@ -1,4 +1,5 @@
-function verBanderas(banderas) {
+
+function verBanderas() {
   const politicsFlags = document.querySelector("#politics-flags");
   const buttonFlags = document.querySelector("#button-flags");
   if (buttonFlags.value == "ver") {
@@ -23,10 +24,17 @@ document.querySelectorAll(".quest-option").forEach((item) => {
   });
 });
 
+
 function verResultado() {
-  const partidos = [
+
+  const uruguay = document.querySelector("#uruguay");
+  const argentina = document.querySelector("#argentina");
+
+  let partidos =  []
+
+  const partidosUy = [
     {
-      id: pn,
+      id: "pn",
       nombre: "Partido Nacional",
       imagen: "pn",
       economic: 63,
@@ -34,7 +42,7 @@ function verResultado() {
       dif: 0,
     },
     {
-      id: fa,
+      id: "fa",
       nombre: "Frente amplio",
       imagen: "fa",
       economic: 23,
@@ -42,7 +50,7 @@ function verResultado() {
       dif: 0,
     },
     {
-      id: pc,
+      id: "pc",
       nombre: "Partido Colorado",
       imagen: "pc",
       economic: 55,
@@ -50,7 +58,7 @@ function verResultado() {
       dif: 0,
     },
     {
-      id: ca,
+      id: "ca",
       nombre: "Cabildo Abierto",
       imagen: "ca",
       economic: 37,
@@ -58,7 +66,7 @@ function verResultado() {
       dif: 0,
     },
     {
-      id: pi,
+      id: "pi",
       nombre: "Partido Independiente",
       imagen: "pi",
       economic: 42,
@@ -67,8 +75,67 @@ function verResultado() {
     },
   ];
 
+  const partidosAr = [
+    {
+      id: "fdt",
+      nombre: "Frente de Todos",
+      imagen: "fdt",
+      economic: 28,
+      social: 52,
+      dif: 0,
+    },
+    {
+      id: "jxc",
+      nombre: "Juntos por el Cambio",
+      imagen: "jxc",
+      economic: 71,
+      social: 53,
+      dif: 0,
+    },
+    {
+      id: "cf",
+      nombre: "Consenso Federal",
+      imagen: "cf",
+      economic: 46,
+      social: 42,
+      dif: 0,
+    },
+    {
+      id: "fitu",
+      nombre: "Frente de Izquierda",
+      imagen: "fitu",
+      economic: 13,
+      social: 76,
+      dif: 0,
+    },
+    {
+      id: "nos",
+      nombre: "Nos",
+      imagen: "nos",
+      economic: 86,
+      social: 29,
+      dif: 0,
+    },
 
-  const inputs = Array.from(document.querySelectorAll('input[type="radio"]'));
+  ];
+
+  if (uruguay.checked == true){
+    partidos = [...partidosUy]
+  } else if (argentina.checked == true){
+    partidos = [...partidosAr]
+  }
+
+  console.log(uruguay, argentina)
+ 
+  const politicsFlags = document.querySelector("#politics-flags");
+  
+  partidos.forEach((partido) => {
+    politicsFlags.innerHTML += `
+    <img id=${partido.id} src="src/images/${partido.imagen}.png" />
+  `;
+  });
+  
+  const inputs = Array.from(document.querySelectorAll('.quest-input'));
 
   preguntas = []
 
@@ -89,9 +156,6 @@ function verResultado() {
     }
   })
 
-
-  console.log(respuestas)
-
   const respuestasText = document.querySelector("#text-resp")
 
   respuestas.forEach((respuesta) => {
@@ -101,8 +165,6 @@ function verResultado() {
     </li>
   `;
   });
-
-
 
   const inputsX = preguntas.slice(0, 30);
   const inputsY = preguntas.slice(30, 60);
@@ -226,7 +288,8 @@ function verResultado() {
   const politics = document.querySelector("#politics");
 
   partidos.forEach((partido) => {
-    const idPartido = partido.id;
+    const pId = ("#" + partido.id);
+    const idPartido = document.querySelector(pId);
     idPartido.style.left = partido.social + "%";
     idPartido.style.top = partido.economic + "%";
     partido.dif =
@@ -238,10 +301,10 @@ function verResultado() {
   partidos.forEach((partido) => {
     politics.innerHTML += `
     <div>
-      <img src="src/images/${partido.imagen}.png">
+      <img id=${partido.id} src="src/images/${partido.imagen}.png">
       <p> ${partido.nombre} (a ${partido.dif}%).</p>
     </div>
-  `;
+    `;
   });
 
   const ecoPor = economic + "%";
