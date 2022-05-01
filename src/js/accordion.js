@@ -347,7 +347,7 @@
 		 */
 		this.openOnClick = function() {
 
-			$('.text-option, .acc_head').on('click', function( event ){
+			$('.text-option, .acc_head, .country-label').on('click', function( event ){
 				event.stopImmediatePropagation();
 
 				var section = $(this).closest('.acc_section');

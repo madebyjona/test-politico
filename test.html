@@ -27,7 +27,7 @@
         <polygon points="50,146 4,100 50,54 73,77 73,123"></polygon>
         <polygon points="79,79 121,79 121,121 79,121"></polygon>
       </svg>
-      <h1>Test Político 🇺🇾</h1>
+      <h1>Test Político</h1>
     </a>
 
     <div id="quest" class="container grid">
@@ -65,14 +65,14 @@
             <li>
               <div><h3>Comienzo</h3></div>
               <div>
-                <p>Por favor, responda a las 20 preguntas.</p>
-                <ul>
-                  <li>Las 10 primeras preguntas le posicionarán en cuestiones sociales.</li>
-                  <li>Las últimas 10 preguntas le posicionarán en cuestiones económicas.</li>
-                </ul>
                 <label class="quest-intro" for="country">Selecciona tu país para compararte con los partidos políticos</label>
-                <input class="country-option" name="country" value="" id="argentina" type="radio"><label class="country-label" for="argentina">Argentina</label></input>
-                <input class="country-option" name="country" value="" id="uruguay" type="radio" checked="checked" ><label class="country-label" for="uruguay">Uruguay</label></input>
+                <input class="country-option" name="country" value="" id="argentina" type="radio">
+                  <label class="country-label" for="argentina"><img src="src/images/argentina.jpg" /><span>Argentina</span></label>
+                <input class="country-option" name="country" value="" id="uruguay" type="radio" checked="checked" >
+                  <label class="country-label" for="uruguay"><img src="src/images/uruguay.jpg" /><span>Uruguay</span></label>
+                  <p>Las 10 primeras preguntas le posicionarán en cuestiones sociales.</p>
+                  <p>Las últimas 10 preguntas le posicionarán en cuestiones económicas.</p>
+                </ul>
               </div>
             </li>
           </ul>
@@ -100,7 +100,17 @@
             </div>
             <div class="numb-bar"><p id="percentSocial"></p></div>
           </div>
-          <img src="src/images/colectivoindividual.png" />
+          <div id="preferences">
+            <div class="arrow-pref">
+              <div class="pref-left"></div>
+              <div class="pref-middle"></div>
+              <div class="pref-right"></div>
+            </div>
+            <div class="text-pref">
+              <p>Colectivo</p>
+              <p>Individual</p>
+            </div>
+          </div>
         </div>
         <div class="block">
           <h3>Ideología</h3>
@@ -121,8 +131,8 @@
           <div id="diagrama">
             <div id="politics-flags"></div>
             <img id="target" src="src/images/target.png" /> 
-            <img class="arrow" id="arrow-top" src="src/images/flecha-der.png" />
-            <img class="arrow" id="arrow-left" src="src/images/flecha-der.png" />
+            <img class="arrow" id="arrow-top" src="src/images/arrow.png" />
+            <img class="arrow" id="arrow-left" src="src/images/arrow.png" />
           </div>
           <div id="target-indication"><img src="src/images/target.png" /><p>= Su posición en el diagrama de Nolan.</p></div>
         </div>

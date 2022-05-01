@@ -7,13 +7,18 @@
   --blue2: #1847ac;
   --sky: #aed0ea;
   --sky2: #2771a9;
+  --green: #98f48a;
+  --green2: #3e9f2f;;
   --yellow: #ffee58;
   --yellow2: #ffed24;
+  --red: #f44040;
   --grey: #ccc;
+  --grey2: #777;
   --white: #fff;
   --white2: #f9f9f9;
   --black: #222;
   --blackshadow: #80222222 ;
+  --skyshadow: #80aed0ea;
 }
 
 body {
@@ -35,7 +40,7 @@ body {
 .grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  padding: 30px 0;
+  padding: 30px 15px;
 }
 
 
@@ -71,6 +76,10 @@ h3 {
 
 h5 {
   font-size: 16px;
+}
+
+ul {
+  padding-left: 18px;
 }
 
 li {
@@ -133,10 +142,10 @@ svg polygon {
 }
 svg polygon:hover {
   fill:var(--sky2);
-  stroke:var(--yellow);
+  stroke:var(--white);
 }
 #sqrs line {
-  stroke:rgba(255, 255, 255, 0.6);
+  stroke: var(--skyshadow);
   stroke-width:2
 }
 a.logo h1 {
@@ -168,7 +177,6 @@ a.logo svg {
   width:80px;
   height:80px;
 }
-
 #h-logo svg polygon {
   stroke:var(--sky2);
 }
@@ -185,7 +193,6 @@ a.logo svg {
 #grid-1 {
   display: grid;
   grid-template-columns: 1fr 2fr;
-
 }
 
 #grid-1 div {
@@ -205,6 +212,10 @@ a.logo svg {
   margin-right: 30px;
 }
 
+.percent-bar {
+  margin-bottom: 30px;
+}
+
 .percent-bar div {
   display: inline-block;
   vertical-align: middle;
@@ -217,6 +228,7 @@ a.logo svg {
 
 .bar {
   width: calc(100% - 160px);
+  min-width: 40px;
   height: 20px;
   background-color: var(--white);
   border: 1px solid var(--grey);
@@ -224,7 +236,7 @@ a.logo svg {
 }
 
 .bar div {
-  background-color: var(--sky2);
+  background-color: var(--sky);
   border: 1px solid var(--grey);
   height: 18px;
   border-radius: 5px;
@@ -234,6 +246,12 @@ a.logo svg {
 .numb-bar {
   width:40px ;
   text-align: right;
+  float: right;
+}
+
+.name-bar h5,
+.numb-bar p {
+  margin: 0;
 }
 
 /* Result - Left Column */
@@ -247,10 +265,11 @@ a.logo svg {
   vertical-align: middle;
   top: -10px;
   left: -15px;
+  margin-right: 5px;
 }
 
 #politics p {
-  margin: 0 0 0 10px ;
+  margin: 0;
   display: inline-block;
   vertical-align: middle;
 }
@@ -266,6 +285,55 @@ a.logo svg {
 #progress-bar {
   width: 0;
 }
+
+.arrow-pref div{
+  display: inline-block;
+}
+
+#preferences {
+  margin-left: 100px;
+  width: calc(100% - 150px);
+  min-width: 140px;
+}
+
+.pref-left {
+  width: 0;
+  height: 0;
+  border-right: 15px solid var(--red);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  vertical-align: middle;
+  margin-right: -10px;
+}
+.pref-middle {
+  width: calc(100% - 10px);
+  margin: 0 -4px;
+  height: 8px;
+  background: var(--red);
+  background: linear-gradient(90deg, var(--red) 5%, var(--sky) 80%);
+  vertical-align: middle;
+}
+.pref-right {
+  width: 0;
+  height: 0;
+  border-left: 15px solid var(--sky);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  margin-left: -10px;
+  vertical-align: middle;
+}
+
+.text-pref p{
+  display: inline-block;
+  margin: 5px 0 0;
+}
+
+.text-pref p:last-child {
+  float: right;
+}
+
+
+
 
 
 /* Quest - Main */
@@ -305,6 +373,51 @@ a.logo svg {
   margin-bottom: 10px;
 }
 
+
+
+
+.country-label {
+  display: inline-block;
+  background-color: var(--grey);
+  padding: 8px 10px;
+  color: var(--grey2);
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid var(--grey2);
+  border-radius: 5px;
+  margin-right: 8px;
+}
+
+.country-label span {
+  vertical-align: middle;
+}
+
+.country-label img {
+  width: 35px;
+  margin-right: 5px;
+  vertical-align: middle;
+  filter: grayscale(1)
+}
+
+.country-option:checked + label img {
+  filter: none;
+}
+
+input[type="radio"].country-option {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+input[type="radio"].country-option:checked + label {
+  background-color:var(--sky);
+  border-color: var(--sky2);
+  color: var(--sky2);
+}
+
+
+
+
 /* Result - Main*/
 
 #diagrama-nolan h3{
@@ -314,7 +427,7 @@ a.logo svg {
 #diagrama {
   width: 310px;
   height: 310px;
-  margin: -400px auto 100px;
+  margin: -415px auto 100px;
   display: block;
   position: relative;
   -ms-transform: rotate(-135deg); 
@@ -335,6 +448,9 @@ a.logo svg {
   height: 24px;
   margin: -12px 0 0 -12px;
   position: absolute;
+  -ms-transform: rotate(-135deg); 
+  -webkit-transform: rotate(-135deg); 
+  transform: rotate(-135deg);
 }
 
 #target-indication p{
@@ -345,6 +461,7 @@ a.logo svg {
 
 #target-indication img{
   vertical-align: middle;
+  width: 24px;
 }
 
 #politics-flags img {
@@ -352,10 +469,11 @@ a.logo svg {
   -ms-transform: rotate(135deg); 
   -webkit-transform: rotate(135deg); 
   transform: rotate(135deg);
-  
+  margin-top:-10px;
+  margin-left: -15px
 }
 #fn, #pc, #pn, #fa, #ca {
-  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 2px 2px var(--blackshadow);
 }
 #politics-flags #fdt {
   margin-top:-7px;
@@ -385,18 +503,18 @@ a.logo svg {
 #arrow-left {
   margin-top: -24px;
   left: 0;
-  -ms-transform: rotate(-135deg); 
-  -webkit-transform: rotate(-135deg); 
-  transform: rotate(-135deg);
+  -ms-transform: rotate(-180deg); 
+  -webkit-transform: rotate(-180deg); 
+  transform: rotate(-180deg);
 
 }
 
 #arrow-top{
   margin-left: -24px;
   top: 0;
-  -ms-transform: rotate(135deg); 
-  -webkit-transform: rotate(135deg); 
-  transform: rotate(135deg);
+  -ms-transform: rotate(90deg); 
+  -webkit-transform: rotate(90deg); 
+  transform: rotate(90deg);
 }
 
 #barEconomic, #barSocial {
@@ -422,6 +540,16 @@ footer {
   text-align: center;
 }
 
+@media (max-width: 960px) {
+  .container {
+    padding: 30px 2vw;
+  }
+  .grid {
+    display: block;
+    padding: 30px 2vw;
+  }
+}
+
 
 @media (max-width: 768px) {
   .container {
@@ -439,23 +567,22 @@ footer {
   .quest-text{
     margin-left: 0;
   }
+
 }
 
 @media (max-width: 576px) {
-  .container {
-    padding: 30px 3vw;
-  }
   #grid-1 {
+    grid-template-columns: 1fr;
     display: block;
   }
   #diagrama {
-    width: 58vw;
-    height: 58vw;
-    margin: -76vw auto 25vw;
+    width: 60vw;
+    height: 60vw;
+    margin: -80vw auto 25vw;
   }
   #rombo {
     margin: auto -15px;
-    width: 94vw;
+    width: 96vw;
   }
 
 }
