@@ -27,111 +27,300 @@ document.querySelectorAll(".quest-option").forEach((item) => {
 
 function verResultado() {
 
-  const uruguay = document.querySelector("#uruguay");
-  const argentina = document.querySelector("#argentina");
+  const paises = [
+    uruguay = {
+      partidos : [
+        {
+          id: "pn-uy",
+          nombre: "Partido Nacional",
+          economic: 63,
+          social: 77,
+          dif: 0,
+        },
+        {
+          id: "fa-uy",
+          nombre: "Frente amplio",
+          economic: 23,
+          social: 69,
+          dif: 0,
+        },
+        {
+          id: "pc-uy",
+          nombre: "Partido Colorado",
+          economic: 55,
+          social: 48,
+          dif: 0,
+        },
+        {
+          id: "ca-uy",
+          nombre: "Cabildo Abierto",
+          economic: 37,
+          social: 33,
+          dif: 0,
+        },
+        {
+          id: "pi-uy",
+          nombre: "Partido Independiente",
+          economic: 42,
+          social: 67,
+          dif: 0,
+        },
+      ],
+      checked : document.querySelector("#uruguay").checked
+    },
+    argentina = {
+      partidos : [
+        {
+          id: "fdt-ar",
+          nombre: "Frente de Todos",
+          economic: 28,
+          social: 52,
+          dif: 0,
+        },
+        {
+          id: "jxc-ar",
+          nombre: "Juntos por el Cambio",
+          economic: 71,
+          social: 53,
+          dif: 0,
+        },
+        {
+          id: "cf-ar",
+          nombre: "Consenso Federal",
+          economic: 46,
+          social: 42,
+          dif: 0,
+        },
+        {
+          id: "fitu-ar",
+          nombre: "Frente de Izquierda",
+          economic: 13,
+          social: 76,
+          dif: 0,
+        },
+        {
+          id: "nos-ar",
+          nombre: "Nos",
+          economic: 86,
+          social: 29,
+          dif: 0,
+        },
+    
+      ],
+      checked : document.querySelector("#argentina").checked
+    },
+    chile = {
+      partidos : [
+        {
+          id: "udi-ch",
+          nombre: "Union Democrata Indpendiente",
+          economic: 89,
+          social: 32,
+          dif: 0,
+        },
+        {
+          id: "rn-ch",
+          nombre: "Renovación Nacional",
+          economic: 78,
+          social: 50,
+          dif: 0,
+        },
+        {
+          id: "ps-ch",
+          nombre: "Partido Socialista de Chile",
+          economic: 22,
+          social: 62,
+          dif: 0,
+        },
+        {
+          id: "pdc-ch",
+          nombre: "Partido Demócrata Cristiano",
+          economic: 52,
+          social: 44,
+          dif: 0,
+        },
+        {
+          id: "ppd-ch",
+          nombre: "Partido por la Democracia",
+          economic: 36,
+          social: 64,
+          dif: 0,
+        },
+        {
+          id: "evop-ch",
+          nombre: "Evolución Política",
+          economic: 87,
+          social: 62,
+          dif: 0,
+        },
+        {
+          id: "pcch-ch",
+          nombre: "Partido Comunista de Chile",
+          economic: 8,
+          social: 53,
+          dif: 0,
+        },
+        {
+          id: "frvs-ch",
+          nombre: "Federación Regionalista Verde Social",
+          economic: 37,
+          social: 86,
+          dif: 0,
+        },
+        {
+          id: "plr-ch",
+          nombre: "Partido Republicano de Chile",
+          economic: 82,
+          social: 11,
+          dif: 0,
+        },
 
-  let partidos =  []
+       
+      ],
+      checked : document.querySelector("#chile").checked
+    },
+    mexico = {
+      partidos : [
+        {
+          id: "pan-mx",
+          nombre: "Partido Acción Nacional",
+          economic: 86,
+          social: 23,
+          dif: 0,
+        },
+        {
+          id: "pri-mx",
+          nombre: "Partido Revolucionario Institucional",
+          economic: 69,
+          social: 41,
+          dif: 0,
+        },
+        {
+          id: "prd-mx",
+          nombre: "Partido de la Revolución Democrática ",
+          economic: 32,
+          social: 87,
+          dif: 0,
+        },
+        {
+          id: "pt-mx",
+          nombre: " Partido del Trabajo",
+          economic: 12,
+          social: 77,
+          dif: 0,
+        },
+        {
+          id: "pve-mx",
+          nombre: "Partido Verde Ecologista de México ",
+          economic: 63,
+          social: 39,
+          dif: 0,
+        },
+        {
+          id: "mc-mx",
+          nombre: "Movimiento Ciudadano ",
+          economic: 41,
+          social: 67,
+          dif: 0,
+        },
+        {
+          id: "morena-mx",
+          nombre: "Movimiento de Regeneración Nacional",
+          economic: 27,
+          social: 54,
+          dif: 0,
+        },
+       
+      ],
+      checked : document.querySelector("#mexico").checked
+    },
+    colombia = {
+      partidos : [
+        {
+          id: "av-co",
+          nombre: "Alianza Verde",
+          economic: 32,
+          social: 79,
+          dif: 0,
+        },
+        {
+          id: "polo-co",
+          nombre: "Partido Revolucionario Institucional",
+          economic: 12,
+          social: 79,
+          dif: 0,
+        },
+        {
+          id: "up-co",
+          nombre: "Unión Patriotica",
+          economic: 8,
+          social: 52,
+          dif: 0,
+        },
+        {
+          id: "plc-co",
+          nombre: "Partido Liberal Colombiano",
+          economic: 36,
+          social: 52,
+          dif: 0,
+        },
+        {
+          id: "mira-co",
+          nombre: "Movimiento Independiente de Renovación Absoluta",
+          economic: 38,
+          social: 14,
+          dif: 0,
+        },
+        {
+          id: "pcc-co",
+          nombre: "Partido Conservador Colombiano ",
+          economic: 53,
+          social: 18,
+          dif: 0,
+        },
+        {
+          id: "cd-co",
+          nombre: "Centro Democrático",
+          economic: 67,
+          social: 6,
+          dif: 0,
+        },
+        {
+          id: "cr-co",
+          nombre: "Partido Cambio Radical",
+          economic: 69,
+          social: 22,
+          dif: 0,
+        },
+        {
+          id: "u-co",
+          nombre: "Partido de la Unión por la Gente",
+          economic: 73,
+          social: 39,
+          dif: 0,
+        },
+       
+      ],
+      checked : document.querySelector("#colombia").checked
+    }
+  ]
 
-  const partidosUy = [
-    {
-      id: "pn",
-      nombre: "Partido Nacional",
-      imagen: "pn",
-      economic: 63,
-      social: 77,
-      dif: 0,
-    },
-    {
-      id: "fa",
-      nombre: "Frente amplio",
-      imagen: "fa",
-      economic: 23,
-      social: 69,
-      dif: 0,
-    },
-    {
-      id: "pc",
-      nombre: "Partido Colorado",
-      imagen: "pc",
-      economic: 55,
-      social: 48,
-      dif: 0,
-    },
-    {
-      id: "ca",
-      nombre: "Cabildo Abierto",
-      imagen: "ca",
-      economic: 37,
-      social: 23,
-      dif: 0,
-    },
-    {
-      id: "pi",
-      nombre: "Partido Independiente",
-      imagen: "pi",
-      economic: 42,
-      social: 67,
-      dif: 0,
-    },
-  ];
+  let partidos = []
 
-  const partidosAr = [
-    {
-      id: "fdt",
-      nombre: "Frente de Todos",
-      imagen: "fdt",
-      economic: 28,
-      social: 52,
-      dif: 0,
-    },
-    {
-      id: "jxc",
-      nombre: "Juntos por el Cambio",
-      imagen: "jxc",
-      economic: 71,
-      social: 53,
-      dif: 0,
-    },
-    {
-      id: "cf",
-      nombre: "Consenso Federal",
-      imagen: "cf",
-      economic: 46,
-      social: 42,
-      dif: 0,
-    },
-    {
-      id: "fitu",
-      nombre: "Frente de Izquierda",
-      imagen: "fitu",
-      economic: 13,
-      social: 76,
-      dif: 0,
-    },
-    {
-      id: "nos",
-      nombre: "Nos",
-      imagen: "nos",
-      economic: 86,
-      social: 29,
-      dif: 0,
-    },
+  paises.forEach((pais) => {
+    if (pais.checked == true) {
+      partidos = pais.partidos
+    }
+  })
 
-  ];
-
-  if (uruguay.checked == true){
-    partidos = [...partidosUy]
-  } else if (argentina.checked == true){
-    partidos = [...partidosAr]
-  }
-
-  console.log(uruguay, argentina)
+  console.log(paises)
+  console.log(partidos)
  
   const politicsFlags = document.querySelector("#politics-flags");
   
   partidos.forEach((partido) => {
     politicsFlags.innerHTML += `
-    <img id=${partido.id} src="src/images/${partido.imagen}.png" />
+    <img id=${partido.id} src="src/images/partidos/${partido.id}.png" />
   `;
   });
   
@@ -301,8 +490,10 @@ function verResultado() {
   partidos.forEach((partido) => {
     politics.innerHTML += `
     <div>
-      <img id=${partido.id} src="src/images/${partido.imagen}.png">
-      <p> ${partido.nombre} (a ${partido.dif}%).</p>
+      <img id=${partido.id} src="src/images/partidos/${partido.id}.png">
+      <div class="name-partido">
+        <p> ${partido.nombre} (a ${partido.dif}%).</p>
+      </div>
     </div>
     `;
   });

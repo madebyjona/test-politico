@@ -257,16 +257,20 @@ a.logo svg {
 /* Result - Left Column */
 
 #politics div {
-  padding: 8px 0;
+  width: 100%;
 }
 
 #politics img {
   display: inline-block;
   vertical-align: middle;
-  top: -10px;
-  left: -15px;
-  margin-right: 5px;
+  width: 50px;
 }
+
+#politics .name-partido {
+  width: calc(100% - 55px);
+  display: inline-block;
+}
+
 
 #politics p {
   margin: 0;
@@ -465,33 +469,15 @@ input[type="radio"].country-option:checked + label {
 }
 
 #politics-flags img {
+  height: 50px;
+  width: 50px;
   position: absolute;
   -ms-transform: rotate(135deg); 
   -webkit-transform: rotate(135deg); 
   transform: rotate(135deg);
-  margin-top:-10px;
-  margin-left: -15px
-}
-#fn, #pc, #pn, #fa, #ca {
-  box-shadow: 0px 0px 2px 2px var(--blackshadow);
-}
-#politics-flags #fdt {
-  margin-top:-7px;
+  margin-top:-25px;
   margin-left: -25px
 }
-#politics-flags #jxc {
-  margin-top:-11px;
-  margin-left: -25px
-}
-
-#politics-flags #fitu,
-#politics-flags #cf,
-#politics-flags #nos {
-  margin-top:-15px;
-  margin-left: -25px
-}
-
-
 
 .arrow {
   width: 24px;
